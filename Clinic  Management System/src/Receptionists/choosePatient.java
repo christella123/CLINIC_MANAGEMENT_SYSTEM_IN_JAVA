@@ -29,7 +29,7 @@ public class choosePatient extends javax.swing.JFrame {
         initComponents();
         ImageIcon ic = new ImageIcon(getClass().getResource("/Images/hospital.png"));
         this.setIconImage(ic.getImage());
-        Object columns[] = {"Date", "Id", "Name", "Age", "Gender", "Address", "Phone Number", "Status", "Disease", "Room Number"};
+        Object columns[] = {"Date", "NID", "Name", "Age", "Gender", "Address", "Phone Number", "Status", "Disease", "Room Number"};
         defaultTableModel.setColumnIdentifiers(columns);
         pSTable.setModel(defaultTableModel);
     }
@@ -267,7 +267,7 @@ public class choosePatient extends javax.swing.JFrame {
             Object columnData[] = new Object[10];
             while (rs.next()) {
                 columnData[0] = rs.getString("date");
-                columnData[1] = rs.getString("id");
+                columnData[1] = rs.getString("NID");
                 columnData[2] = rs.getString("name");
                 columnData[3] = rs.getInt("age");
                 columnData[4] = rs.getString("gender");
@@ -289,14 +289,14 @@ public class choosePatient extends javax.swing.JFrame {
         defaultTableModel.getDataVector().removeAllElements();
         defaultTableModel.fireTableDataChanged();
         String searchKey = pSearchField.getText();
-        String sql = "select date,id,name,age,gender,address,phone,status,disease,room from patient where name = '" + searchKey + "'";
+        String sql = "select date,NID,name,age,gender,address,phone,status,disease,room from patient where name = '" + searchKey + "'";
         try {
             ps = connection.prepareStatement(sql);
             rs = ps.executeQuery();
             Object columnData[] = new Object[10];
             while (rs.next()) {
                 columnData[0] = rs.getString("date");
-                columnData[1] = rs.getString("id");
+                columnData[1] = rs.getString("NID");
                 columnData[2] = rs.getString("name");
                 columnData[3] = rs.getInt("age");
                 columnData[4] = rs.getString("gender");

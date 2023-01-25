@@ -28,7 +28,7 @@ public final class patientDetails extends javax.swing.JFrame {
         ImageIcon ic = new ImageIcon(getClass().getResource("/Images/hospital.png"));
         this.setIconImage(ic.getImage());
         data = name;
-        Object columns[] = {"Count", "Date", "Id", "Name", "Age", "Gender", "Address", "Phone Number", "Status", "Disease", "Room Number"};
+        Object columns[] = {"id", "Date", "NID", "Name", "Age", "Gender", "Address", "Phone Number", "Status", "Disease", "Room Number"};
         defaultTableModel.setColumnIdentifiers(columns);
         pSTable.setModel(defaultTableModel);
         loadData();
@@ -42,15 +42,15 @@ public final class patientDetails extends javax.swing.JFrame {
         connection = Connector.ConnectDb();
         defaultTableModel.getDataVector().removeAllElements();
         defaultTableModel.fireTableDataChanged();
-        String sql = "select count,date,id,name,age,gender,address,phone,status,disease,room from patient where name = '" + data + "'";
+        String sql = "select id,date,NID,name,age,gender,address,phone,status,disease,room from patient where name = '" + data + "'";
         try {
             ps = connection.prepareStatement(sql);
             rs = ps.executeQuery();
             Object columnData[] = new Object[11];
             while (rs.next()) {
-                columnData[0] = rs.getInt("count");
+                columnData[0] = rs.getInt("id");
                 columnData[1] = rs.getString("date");
-                columnData[2] = rs.getString("id");
+                columnData[2] = rs.getString("NID");
                 columnData[3] = rs.getString("name");
                 columnData[4] = rs.getInt("age");
                 columnData[5] = rs.getString("gender");

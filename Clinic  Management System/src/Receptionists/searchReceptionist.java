@@ -216,7 +216,7 @@ public class searchReceptionist extends javax.swing.JFrame {
         defaultTableModel.getDataVector().removeAllElements();
         defaultTableModel.fireTableDataChanged();
         String searchKey = rSearchField.getText();
-        String sql = "select count,joining,id,name,age,gender,blood,email,phone,address,status,username from receptionist where name = '" + searchKey + "'";
+        String sql = "select count,joining,id,name,age,gender,blood,email,phone,address,status,username from receptionist where name like '%" + searchKey + "%'";
         try {
             ps = connection.prepareStatement(sql);
             rs = ps.executeQuery();

@@ -27,19 +27,19 @@ public class Appointment extends javax.swing.JFrame {
         this.setIconImage(ic.getImage());
 
         connection = Connector.ConnectDb();
-        String sql = "SELECT id,age,gender FROM patient WHERE name = '" + pName + "'";
+        String sql = "SELECT NID,age,gender FROM patient WHERE name = '" + pName + "'";
         try {
             ps = connection.prepareStatement(sql);
             rs = ps.executeQuery();
             rs.first();
-            String Id = rs.getString("id");
+            String Id = rs.getString("NID");
             int iage = rs.getInt("age");
             String gender = rs.getString("gender");
             String age = Integer.toString(iage);
             pNamelbl.setText(pName);
-            pIdlbl.setText(Id);
-            pAgelbl.setText(age);
-            pGenderlbl.setText(gender);
+            pIdlbl.setText("1");
+            pAgelbl.setText("2");
+            pGenderlbl.setText("male");
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Something Went Wrong");

@@ -34,7 +34,7 @@ public class addReceptionist extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        rIdField = new javax.swing.JTextField();
+        rDateField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         rNameField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -60,7 +60,7 @@ public class addReceptionist extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         rPassField = new javax.swing.JPasswordField();
-        rDateField = new com.toedter.calendar.JDateChooser();
+        rIdField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Add Receptionist !");
@@ -113,9 +113,9 @@ public class addReceptionist extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 153, 153));
         jLabel1.setText("Date");
 
-        rIdField.addActionListener(new java.awt.event.ActionListener() {
+        rDateField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rIdFieldActionPerformed(evt);
+                rDateFieldActionPerformed(evt);
             }
         });
 
@@ -279,6 +279,12 @@ public class addReceptionist extends javax.swing.JFrame {
             }
         });
 
+        rIdField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rIdField1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -328,12 +334,12 @@ public class addReceptionist extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rDateField, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(rDateField, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
-                                .addComponent(rIdField, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(121, 121, 121)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rIdField1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(125, 125, 125)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -358,20 +364,22 @@ public class addReceptionist extends javax.swing.JFrame {
                 .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)
+                        .addComponent(rDateField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(blood)
-                        .addComponent(rBloodField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(rDateField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(rBloodField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(rIdField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(rIdField1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel7)
                     .addComponent(rPhoneField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rUserField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20))
-                .addGap(28, 28, 28)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -428,9 +436,9 @@ public class addReceptionist extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jLabel19MouseClicked
 
-    private void rIdFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rIdFieldActionPerformed
+    private void rDateFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rDateFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rIdFieldActionPerformed
+    }//GEN-LAST:event_rDateFieldActionPerformed
 
     private void rNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rNameFieldActionPerformed
         // TODO add your handling code here:
@@ -467,8 +475,8 @@ public class addReceptionist extends javax.swing.JFrame {
     private void addDctorbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addDctorbtnMouseClicked
         connection = Connector.ConnectDb();
         if (connection != null) {
-            String date = rDateField.getDate().toString();
-            String id = rIdField.getText();
+            String date = rDateField.getText();
+            String id = rDateField.getText();
             String name = rNameField.getText();
             int age = Integer.parseInt(rAgeField.getText());
             String gender = (String) rGenderField.getSelectedItem();
@@ -504,7 +512,7 @@ public class addReceptionist extends javax.swing.JFrame {
     private void clearPbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearPbtnMouseClicked
         //rDateField.setDate();
         rNameField.setText("");
-        rIdField.setText("");
+        rDateField.setText("");
         rAgeField.setText("");
         rGenderField.setSelectedIndex(0);
         rBloodField.setText("");
@@ -519,7 +527,7 @@ public class addReceptionist extends javax.swing.JFrame {
     private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
         //rDateField.setText("");
         rNameField.setText("");
-        rIdField.setText("");
+        rDateField.setText("");
         rAgeField.setText("");
         rGenderField.setSelectedIndex(0);
         rBloodField.setText("");
@@ -542,6 +550,10 @@ public class addReceptionist extends javax.swing.JFrame {
     private void rPassFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rPassFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rPassFieldActionPerformed
+
+    private void rIdField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rIdField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rIdField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -577,10 +589,10 @@ public class addReceptionist extends javax.swing.JFrame {
     private javax.swing.JTextField rAddressField;
     private javax.swing.JTextField rAgeField;
     private javax.swing.JTextField rBloodField;
-    private com.toedter.calendar.JDateChooser rDateField;
+    private javax.swing.JTextField rDateField;
     private javax.swing.JTextField rEmailField;
     private javax.swing.JComboBox<String> rGenderField;
-    private javax.swing.JTextField rIdField;
+    private javax.swing.JTextField rIdField1;
     private javax.swing.JTextField rNameField;
     private javax.swing.JPasswordField rPassField;
     private javax.swing.JTextField rPhoneField;

@@ -22,9 +22,9 @@ public class patientManagement extends javax.swing.JFrame {
     ResultSet rs = null;
     DefaultTableModel defaultTableModel = new DefaultTableModel();
 
-    int count;
+    int id;
     String date;
-    String id;
+    String NID;
     String name;
     int age;
     String gender;
@@ -48,15 +48,15 @@ public class patientManagement extends javax.swing.JFrame {
 
     public void loadData() {
         connection = Connector.ConnectDb();
-        String sql = "select count,date,id,name,age,gender,address,phone,status,disease,room from patient";
+        String sql = "select id,date,NID,name,age,gender,address,phone,status,disease,room from patient";
         try {
             ps = connection.prepareStatement(sql);
             rs = ps.executeQuery();
             Object columnData[] = new Object[11];
             while (rs.next()) {
-                columnData[0] = rs.getInt("count");
+                columnData[0] = rs.getInt("id");
                 columnData[1] = rs.getString("date");
-                columnData[2] = rs.getString("id");
+                columnData[2] = rs.getString("NID");
                 columnData[3] = rs.getString("name");
                 columnData[4] = rs.getInt("age");
                 columnData[5] = rs.getString("gender");
@@ -324,9 +324,9 @@ public class patientManagement extends javax.swing.JFrame {
 
     private void pMTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pMTableMouseClicked
         int row = pMTable.getSelectedRow();
-        int pcount = Integer.parseInt((pMTable.getValueAt(row, 0).toString()));
+        int pid = Integer.parseInt((pMTable.getValueAt(row, 0).toString()));
         String pdate = (pMTable.getValueAt(row, 1).toString());
-        String pid = (pMTable.getValueAt(row, 2).toString());
+        String pNID = (pMTable.getValueAt(row, 2).toString());
         String pname = (pMTable.getValueAt(row, 3).toString());
         int page = Integer.parseInt((pMTable.getValueAt(row, 4).toString()));
         String pgender = (pMTable.getValueAt(row, 5).toString());
@@ -336,9 +336,9 @@ public class patientManagement extends javax.swing.JFrame {
         String pdisease = (pMTable.getValueAt(row, 9).toString());
         int proom = Integer.parseInt(pMTable.getValueAt(row, 10).toString());
 
-        count = pcount;
-        date = pdate;
         id = pid;
+        date = pdate;
+        NID = pNID;
         name = pname;
         age = page;
         gender = pgender;
@@ -351,7 +351,7 @@ public class patientManagement extends javax.swing.JFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         connection = Connector.ConnectDb();
-        String sql = "Update patient set date = '" + date + "', id = '" + id + "', name = '" + name + "', age = '" + age + "', gender = '" + gender + "', address = '" + address + "', phone = '" + phone + "', status = '" + status + "', disease = '" + disease + "', room = '" + room + "' where count = '" + count + "'";
+        String sql = "Update patient set date = '" + date + "', NID = '" + NID + "', name = '" + name + "', age = '" + age + "', gender = '" + gender + "', address = '" + address + "', phone = '" + phone + "', status = '" + status + "', disease = '" + disease + "', room = '" + room + "' where count = '" + id + "'";
         try {
             ps = connection.prepareStatement(sql);
             ps.execute();

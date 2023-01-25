@@ -216,7 +216,7 @@ public class searchDoctor extends javax.swing.JFrame {
         defaultTableModel.getDataVector().removeAllElements();
         defaultTableModel.fireTableDataChanged();
         String searchKey = rSearchField.getText();
-        String sql = "select count,date,id,name,age,gender,blood,dept,phone,email,status,address,room,username from doctor where name = '" + searchKey + "'";
+        String sql = "select count,date,id,name,age,gender,blood,dept,phone,email,status,address,room,username from doctor where name like '%" + searchKey + "%'";
         try {
             ps = connection.prepareStatement(sql);
             rs = ps.executeQuery();

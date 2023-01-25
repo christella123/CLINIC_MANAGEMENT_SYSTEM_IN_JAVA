@@ -426,7 +426,7 @@ public class newPatient extends javax.swing.JFrame {
         connection = Connector.ConnectDb();
         if (connection != null) {
             String date = pDateField.getText();
-            String id = pIdField.getText();
+            String NID = pIdField.getText();
             String name = pNameField.getText();
             int age = Integer.parseInt(pAgeField.getText());
             String gender = (String) pGenderField.getSelectedItem();
@@ -435,11 +435,11 @@ public class newPatient extends javax.swing.JFrame {
             String status = (String) pStatusField.getSelectedItem();
             String disease = pDiseaseField.getText();
             int room = Integer.parseInt(pRoomField.getText());
-            String sql = "insert into patient(date,id,name,age,gender,address,phone,status,disease,room) values (?,?,?,?,?,?,?,?,?,?)";
+            String sql = "insert into patient(date,NID,name,age,gender,address,phone,status,disease,room) values (?,?,?,?,?,?,?,?,?,?)";
             try {
                 prp = connection.prepareStatement(sql);
                 prp.setString(1, date);
-                prp.setString(2, id);
+                prp.setString(2, NID);
                 prp.setString(3, name);
                 prp.setInt(4, age);
                 prp.setString(5, gender);
